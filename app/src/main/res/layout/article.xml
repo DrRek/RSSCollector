@@ -56,28 +56,13 @@
             android:layout_marginBottom="30dp"/>
 
 
-        <TextView
-            android:layout_below="@id/tv"
-            android:id="@+id/label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Source:"
-            android:layout_marginRight="10dp"
-            android:textStyle="bold"
-            />
-        <TextView
-            android:id="@+id/view_source"
-            android:layout_below="@id/tv"
-            android:layout_toRightOf="@id/label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textColor="@color/colorPrimary"
-            android:text="www.blogo.it/rss"
-            android:clickable="true"
-            android:onClick="viewSource"
-            />
+       <Button
+           android:layout_below="@id/tv"
+           android:id="@+id/view_source"
+           android:onClick="viewSource"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="VIEW SOURCE"/>
     </RelativeLayout>
 </ScrollView>
 
