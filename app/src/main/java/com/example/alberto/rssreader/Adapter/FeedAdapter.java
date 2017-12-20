@@ -83,6 +83,8 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedViewHolder>{
                     intent.setClass(c,ArticleWebPage.class);
                     intent.putExtra("url", Uri.parse(rssObject.getItems().get(position).getLink()).toString());
                     intent.putExtra("content", rssObject.getItems().get(position).getContent());
+                    intent.putExtra("date", rssObject.getItems().get(position).getPubDate());
+                    intent.putExtra("title", rssObject.getItems().get(position).getTitle());
                     //Intent browserIntent= new Intent(Intent.ACTION_VIEW, Uri.parse(rssObject.getItems().get(position).getLink()));
                    //  mContext.startActivity(browserIntent);
                     c.startActivity(intent);
