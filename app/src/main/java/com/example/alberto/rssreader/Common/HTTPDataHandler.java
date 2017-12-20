@@ -38,6 +38,7 @@ public class HTTPDataHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println(stream);
         return stream;
     }
 }
