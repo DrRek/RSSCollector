@@ -11,12 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SitePage">
+        <activity android:name=".SitesList">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".SitePage"
+            android:label="Site Page"
+            android:parentActivityName="com.example.alberto.rssreader.SitesList">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alberto.rssreader.SitesList" />
         </activity>
         <activity
             android:name="com.example.alberto.rssreader.ArticleWebPage"

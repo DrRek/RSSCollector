@@ -2,6 +2,7 @@ package com.example.alberto.rssreader;
 
 import android.app.ProgressDialog;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +26,7 @@ public class SitePage extends AppCompatActivity {
     TextView site;
 
     //RSS link
-    private final String RSS_link = "http://www.ansa.it/sito/ansait_rss.xml";
+    private String RSS_link;
     private final String RSS_to_Json_API = "https://api.rss2json.com/v1/api.json?rss_url=";
 
     @Override
@@ -44,6 +45,8 @@ public class SitePage extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager= new LinearLayoutManager(getBaseContext(),LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
+
+        RSS_link = getIntent().getExtras().getString("url");
 
         loadRSS();
     }
