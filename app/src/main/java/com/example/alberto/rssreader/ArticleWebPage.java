@@ -45,15 +45,11 @@ public class ArticleWebPage extends AppCompatActivity {
         datetv.setText(getIntent().getExtras().getString("date"));
 
         TextView contenttv = findViewById(R.id.tv);
-        contenttv.setText(Html.fromHtml(getIntent().getExtras().getString("content")));
-
-        TextView urltv = findViewById(R.id.view_source);
-        contenttv.setText(getIntent().getExtras().getString("url"));
+        contenttv.setText(getIntent().getExtras().getString("content"));
     }
 
     public void viewSource(View v){
-        TextView tv = (TextView) v;
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(tv.getText().toString()));
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getIntent().getExtras().getString("url")));
         startActivity(myIntent);
     }
 }
