@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/material_grey_850"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/toolbar3">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TITOLO"
+            android:textAlignment="center"
+            android:textSize="50dp" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_below="@id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="20/12/2017 16:04"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+
+
+        <ImageView
+            android:id="@+id/article_image"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/date"
+            android:src="@drawable/placeholder" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/article_image"
+            android:text="content"
+            android:textSize="30dp"
+            android:layout_marginBottom="30dp"/>
+
+
+        <TextView
+            android:layout_below="@id/tv"
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Source:"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/view_source"
+            android:layout_below="@id/tv"
+            android:layout_toRightOf="@id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimary"
+            android:text="www.blogo.it/rss"
+            android:clickable="true"
+            android:onClick="viewSource"
+            />
+    </RelativeLayout>
+</ScrollView>
+
+</RelativeLayout>
