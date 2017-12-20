@@ -25,10 +25,18 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         app:fabSize="normal"
-        android:layout_margin="10dp"
+        android:layout_margin="40dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:onClick="pickSites"
-        android:src="@drawable/ic_rss"/>
+        android:src="@drawable/ic_add"/>
+    <Button
+        android:onClick="pickSites"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:text="AGGIUNGI FEED"
+        android:textSize="30dp"
+        android:textAlignment="center"/>
 
 </RelativeLayout>
