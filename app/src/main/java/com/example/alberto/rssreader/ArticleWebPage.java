@@ -25,9 +25,9 @@ public class ArticleWebPage extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.article_web_page);
+        setContentView(R.layout.article);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar3);
         toolbar.setTitle("Senior RSS");
         toolbar.setTitleTextColor(Color.WHITE);
         toolbar.setTitleMarginStart(72);
@@ -39,16 +39,16 @@ public class ArticleWebPage extends AppCompatActivity {
         webView.loadUrl(getIntent().getExtras().getString("url"));*/
 
         TextView titletv = findViewById(R.id.title);
-        titletv.setText(Html.fromHtml(getIntent().getExtras().getString("title")));
+        titletv.setText(getIntent().getExtras().getString("title"));
 
         TextView datetv = findViewById(R.id.date);
-        datetv.setText(Html.fromHtml(getIntent().getExtras().getString("date")));
+        datetv.setText(getIntent().getExtras().getString("date"));
 
         TextView contenttv = findViewById(R.id.tv);
         contenttv.setText(Html.fromHtml(getIntent().getExtras().getString("content")));
 
         TextView urltv = findViewById(R.id.view_source);
-        contenttv.setText(Html.fromHtml(getIntent().getExtras().getString("url")));
+        contenttv.setText(getIntent().getExtras().getString("url"));
     }
 
     public void viewSource(View v){
