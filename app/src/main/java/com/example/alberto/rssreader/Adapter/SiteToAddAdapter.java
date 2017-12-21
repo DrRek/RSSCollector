@@ -43,6 +43,7 @@ class SiteToAddViewHolder extends RecyclerView.ViewHolder implements View.OnClic
         //Set Event
         itemView.setOnClickListener(this);
         itemView.setOnLongClickListener(this);
+        aSwitch.setClickable(false);
     }
 
     public void setItemClickListener(ItemClickListener itemClickListener) {
@@ -108,6 +109,7 @@ public class SiteToAddAdapter extends RecyclerView.Adapter<SiteToAddViewHolder>{
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
+                System.out.println("SONO STATO CHIAMATO DIO BONO");
                 if(!isLongClick)
                 {
                     holder.aSwitch.toggle();

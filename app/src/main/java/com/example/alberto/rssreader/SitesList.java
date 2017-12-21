@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.alberto.rssreader.Adapter.FeedAdapter;
 import com.example.alberto.rssreader.Adapter.SiteAdapter;
+import com.example.alberto.rssreader.Interface.DeleteListener;
 import com.example.alberto.rssreader.Model.RSSObject;
 import com.example.alberto.rssreader.Model.Site;
 import com.google.gson.Gson;
@@ -28,7 +29,7 @@ import java.util.List;
  * Created by Alberto on 12/12/2017.
  */
 
-public class SitesList extends AppCompatActivity{
+public class SitesList extends AppCompatActivity implements DeleteListener{
 
     private List<Site> sites;
     private RecyclerView recyclerView;
@@ -50,6 +51,8 @@ public class SitesList extends AppCompatActivity{
     protected void onResume(){
         super.onResume();
 
+        System.out.println("onResume");
+
         sites = new ArrayList<>();
 
         SharedPreferences preferenze = getApplicationContext().getSharedPreferences("com.example.alberto.rssreader", MODE_PRIVATE);
@@ -68,7 +71,7 @@ public class SitesList extends AppCompatActivity{
     }
 
     private void loadSites(){
-        SiteAdapter adapter = new SiteAdapter(sites,getBaseContext());
+        SiteAdapter adapter = new SiteAdapter(sites, this,getBaseContext());
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
@@ -77,5 +80,10 @@ public class SitesList extends AppCompatActivity{
         Intent intent = new Intent();
         intent.setClass(getApplicationContext() ,SitesPicker.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onDelete() {
+        onResume();
     }
 }
