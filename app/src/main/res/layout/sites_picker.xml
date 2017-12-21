@@ -40,6 +40,8 @@
         android:textColor="@color/white"
         android:background="@color/colorPrimary"
         android:textSize="30dp"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:id="@+id/button" />
+
 
 </RelativeLayout>
