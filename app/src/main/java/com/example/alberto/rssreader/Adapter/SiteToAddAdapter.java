@@ -72,10 +72,12 @@ public class SiteToAddAdapter extends RecyclerView.Adapter<SiteToAddViewHolder>{
         this.mContext = mContext;
         inflater = LayoutInflater.from(mContext);
         defaultSites = new ArrayList<>();
+        defaultSites.add(new Site("Adnkronos.it", "http://rss.adnkronos.com/RSS_PrimaPagina.xml"));
         defaultSites.add(new Site("Ansa.it", "http://www.ansa.it/sito/ansait_rss.xml"));
         defaultSites.add(new Site("Blogo.it", "http://www.blogo.it/rss"));
-        defaultSites.add(new Site("Corriere.it", "http://xml2.corriereobjects.it/rss/homepage.xml"));
-        defaultSites.add(new Site("NY Times", "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"));
+        defaultSites.add(new Site("Il Mattino", "https://www.ilmattino.it/rss/home.xml"));
+        defaultSites.add(new Site("Il Messaggero", "http://www.ilmessaggero.it/rss/home.xml"));
+
 
         SharedPreferences preferenze = mContext.getSharedPreferences("com.example.alberto.rssreader", MODE_PRIVATE);
         Gson gson = new Gson();

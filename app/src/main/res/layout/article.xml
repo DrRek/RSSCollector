@@ -28,7 +28,8 @@
             android:layout_height="wrap_content"
             android:text="TITOLO"
             android:textAlignment="center"
-            android:textSize="40dp" />
+            android:textSize="40dp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/date"
@@ -54,7 +55,8 @@
             android:layout_below="@+id/date"
             android:text="content"
             android:textSize="30dp"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/black"/>
 
 
        <Button
