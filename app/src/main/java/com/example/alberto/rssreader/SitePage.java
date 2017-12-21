@@ -35,6 +35,7 @@ public class SitePage extends AppCompatActivity {
         setContentView(R.layout.site_page);
 
         site = (TextView) findViewById(R.id.sitename);
+        site.setText(getIntent().getExtras().getString("nome"));
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Senior RSS");
@@ -76,7 +77,6 @@ public class SitePage extends AppCompatActivity {
                 rssObject = new Gson(). fromJson(s, RSSObject.class);
                 FeedAdapter adapter = new FeedAdapter(rssObject,getBaseContext());
                 recyclerView.setAdapter(adapter);
-                site.setText(rssObject.getFeed().getTitle());
                 adapter.notifyDataSetChanged();
             }
         };
