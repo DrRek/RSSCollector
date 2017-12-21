@@ -1,12 +1,16 @@
 package com.example.alberto.rssreader;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.alberto.rssreader.Adapter.FeedAdapter;
@@ -40,28 +44,38 @@ public class SitesList extends AppCompatActivity{
         toolbar.setTitleMarginStart(72);
         setSupportActionBar(toolbar);
 
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+
         sites = new ArrayList<>();
 
-        sites.add(new Site("ansa", "http://www.ansa.it/sito/ansait_rss.xml"));
-        sites.add(new Site("blogo", "http://www.blogo.it/rss"));
-        /*
         SharedPreferences preferenze = getApplicationContext().getSharedPreferences("com.example.alberto.rssreader", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = preferenze.getString("sitiScelti", "");
-        Type listType = new TypeToken<List<Site>>() {}.getType();
-        sites = gson.fromJson(json, listType);*/
+        if(null!=json && !json.equals("")) {
+            Type listType = new TypeToken<List<Site>>() {
+            }.getType();
+            sites = gson.fromJson(json, listType);
+            recyclerView = findViewById(R.id.recyclerView3);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getBaseContext(), LinearLayoutManager.VERTICAL, false);
+            recyclerView.setLayoutManager(linearLayoutManager);
 
-        recyclerView = findViewById(R.id.recyclerView3);
-        LinearLayoutManager linearLayoutManager= new LinearLayoutManager(getBaseContext(),LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        loadSites();
-
+            loadSites();
+        }
     }
 
     private void loadSites(){
         SiteAdapter adapter = new SiteAdapter(sites,getBaseContext());
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+    }
+
+    public void pickSites(View v){
+        Intent intent = new Intent();
+        intent.setClass(getApplicationContext() ,SitesPicker.class);
+        startActivity(intent);
     }
 }

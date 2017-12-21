@@ -17,6 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SitesPicker"
+            android:label="Site Page"
+            android:parentActivityName="com.example.alberto.rssreader.SitesList">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alberto.rssreader.SitesList" />
+        </activity>
         <activity android:name=".SitePage"
             android:label="Site Page"
             android:parentActivityName="com.example.alberto.rssreader.SitesList">

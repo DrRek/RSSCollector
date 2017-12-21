@@ -28,4 +28,12 @@ public class Site {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    @Override
+    public boolean equals(Object o){
+        if(o.getClass().equals(Site.class) && ((Site)o).getUrl().equals(url)){
+            return true;
+        }
+        return false;
+    }
 }
