@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.alberto.rssreader.Adapter.FeedAdapter;
@@ -41,7 +42,19 @@ public class SitePage extends AppCompatActivity {
         toolbar.setTitle("Senior RSS");
         toolbar.setTitleTextColor(Color.WHITE);
         toolbar.setTitleMarginStart(72);
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
+
+
+
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager= new LinearLayoutManager(getBaseContext(),LinearLayoutManager.VERTICAL, false);

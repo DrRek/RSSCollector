@@ -5,7 +5,7 @@ android:layout_width="match_parent" android:layout_height="match_parent">
 <android.support.v7.widget.Toolbar
     android:id="@+id/toolbar"
     android:minHeight="?attr/actionBarSize"
-    android:background="@color/material_grey_850"
+    android:background="@color/colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     />

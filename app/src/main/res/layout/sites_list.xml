@@ -7,7 +7,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar3"
         android:minHeight="?attr/actionBarSize"
-        android:background="@color/material_grey_800"
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
@@ -29,9 +29,12 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:onClick="pickSites"
-        android:src="@drawable/ic_add"/>
+        android:src="@drawable/ic_add"
+        />
     <Button
         android:onClick="pickSites"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_alignParentBottom="true"

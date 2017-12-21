@@ -14,7 +14,7 @@
         <TextView
             android:text="NOME SITO"
             android:id="@+id/sito"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

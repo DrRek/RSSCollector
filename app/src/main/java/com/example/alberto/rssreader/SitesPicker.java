@@ -34,7 +34,19 @@ public class SitesPicker extends AppCompatActivity {
         toolbar.setTitle("Senior RSS");
         toolbar.setTitleTextColor(Color.WHITE);
         toolbar.setTitleMarginStart(72);
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
+
+
+
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         recyclerView = findViewById(R.id.recyclerView2);
         LinearLayoutManager linearLayoutManager= new LinearLayoutManager(getBaseContext(),LinearLayoutManager.VERTICAL, false);

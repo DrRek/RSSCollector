@@ -34,15 +34,18 @@ public class ArticleWebPage extends AppCompatActivity {
         toolbar.setTitleMarginStart(72);
 
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
+
+
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
-
-
-        setSupportActionBar(toolbar);
 
         /*
         webView = (WebView)findViewById(R.id.webview);

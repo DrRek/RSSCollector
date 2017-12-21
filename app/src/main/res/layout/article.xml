@@ -6,7 +6,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar3"
         android:minHeight="?attr/actionBarSize"
-        android:background="@color/material_grey_850"
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
@@ -18,7 +18,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
 
         <TextView
             android:id="@+id/title"
@@ -27,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="TITOLO"
             android:textAlignment="center"
-            android:textSize="50dp" />
+            android:textSize="40dp" />
 
         <TextView
             android:id="@+id/date"
