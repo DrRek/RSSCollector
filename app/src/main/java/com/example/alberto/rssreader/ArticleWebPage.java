@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.view.Menu;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -31,6 +32,16 @@ public class ArticleWebPage extends AppCompatActivity {
         toolbar.setTitle("Senior RSS");
         toolbar.setTitleTextColor(Color.WHITE);
         toolbar.setTitleMarginStart(72);
+
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+
         setSupportActionBar(toolbar);
 
         /*
@@ -52,4 +63,5 @@ public class ArticleWebPage extends AppCompatActivity {
         Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getIntent().getExtras().getString("url")));
         startActivity(myIntent);
     }
+
 }
