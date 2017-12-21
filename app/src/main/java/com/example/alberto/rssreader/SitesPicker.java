@@ -109,7 +109,7 @@ public class SitesPicker extends AppCompatActivity {
                                 editor.apply();
                                 dl.onDelete();
                             }
-                            Toast.makeText(getApplicationContext(), "Feed rimosso", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Feed rimosso", Toast.LENGTH_SHORT).show();//
                             break;
                         case DialogInterface.BUTTON_NEGATIVE:
                             Toast.makeText(getApplicationContext().getApplicationContext(), "Azione annullata", Toast.LENGTH_LONG).show();
