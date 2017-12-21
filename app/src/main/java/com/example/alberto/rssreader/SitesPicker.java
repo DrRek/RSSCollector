@@ -31,9 +31,8 @@ public class SitesPicker extends AppCompatActivity {
         setContentView(R.layout.sites_picker);
 
         Toolbar toolbar = findViewById(R.id.toolbar2);
-        toolbar.setTitle("Senior RSS");
+        toolbar.setTitle("RSS Collector");
         toolbar.setTitleTextColor(Color.WHITE);
-        toolbar.setTitleMarginStart(72);
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
 
 

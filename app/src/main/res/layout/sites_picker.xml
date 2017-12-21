@@ -29,7 +29,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:onClick="updateSitesList"
-        android:backgroundTint="@color/green"
         android:src="@drawable/ic_confirm"/>
     <Button
         android:onClick="updateSitesList"

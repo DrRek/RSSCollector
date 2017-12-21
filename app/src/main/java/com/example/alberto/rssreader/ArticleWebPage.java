@@ -1,6 +1,8 @@
 package com.example.alberto.rssreader;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
@@ -13,7 +15,10 @@ import android.view.Menu;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.net.URL;
 
 /**
  * Created by Alberto on 10/12/2017.
@@ -29,9 +34,8 @@ public class ArticleWebPage extends AppCompatActivity {
         setContentView(R.layout.article);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar3);
-        toolbar.setTitle("Senior RSS");
+        toolbar.setTitle("RSS Collector");
         toolbar.setTitleTextColor(Color.WHITE);
-        toolbar.setTitleMarginStart(72);
 
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
 

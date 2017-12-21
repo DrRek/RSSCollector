@@ -39,9 +39,8 @@ public class SitePage extends AppCompatActivity {
         site.setText(getIntent().getExtras().getString("nome"));
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Senior RSS");
+        toolbar.setTitle("RSS Collector");
         toolbar.setTitleTextColor(Color.WHITE);
-        toolbar.setTitleMarginStart(72);
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
 
 

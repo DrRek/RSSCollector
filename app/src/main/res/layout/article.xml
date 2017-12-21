@@ -39,19 +39,19 @@
             android:textAlignment="textStart"
             android:textSize="15dp" />
 
-
+<!--
         <ImageView
             android:id="@+id/article_image"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_below="@id/date"
-            android:src="@drawable/placeholder" />
+            android:src="@drawable/placeholder" /> -->
 
         <TextView
             android:id="@+id/tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/article_image"
+            android:layout_below="@+id/date"
             android:text="content"
             android:textSize="30dp"
             android:layout_marginBottom="30dp"/>
@@ -63,7 +63,7 @@
            android:onClick="viewSource"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:text="VIEW SOURCE"/>
+           android:text="mostra sorgente"/>
     </RelativeLayout>
 </ScrollView>
 

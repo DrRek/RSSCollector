@@ -39,6 +39,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:onClick="pickSites"
+        android:backgroundTint="@color/yellow"
         android:src="@drawable/ic_add"/>
 
 </RelativeLayout>

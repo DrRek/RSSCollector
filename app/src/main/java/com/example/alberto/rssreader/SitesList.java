@@ -40,9 +40,9 @@ public class SitesList extends AppCompatActivity implements DeleteListener{
         setContentView(R.layout.sites_list);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar3);
-        toolbar.setTitle("Senior RSS");
+        toolbar.setTitle("RSS Collector");
         toolbar.setTitleTextColor(Color.WHITE);
-        toolbar.setTitleMarginStart(72);
+        toolbar.setTitleMarginStart(175);
         setSupportActionBar(toolbar);
 
     }
