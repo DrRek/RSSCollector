@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_alignParentBottom="true"
-        android:text="AGGIUNGI FEED"
+        android:text="ADD FEED"
         android:textSize="30dp"
         android:textAlignment="center"/>
     <android.support.design.widget.FloatingActionButton
