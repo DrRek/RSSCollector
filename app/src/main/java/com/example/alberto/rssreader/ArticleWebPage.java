@@ -45,7 +45,7 @@ public class ArticleWebPage extends AppCompatActivity {
         datetv.setText(getIntent().getExtras().getString("date"));
 
         TextView contenttv = findViewById(R.id.tv);
-        contenttv.setText(getIntent().getExtras().getString("content"));
+        contenttv.setText(Html.fromHtml(getIntent().getExtras().getString("content")));
     }
 
     public void viewSource(View v){

@@ -90,8 +90,6 @@ public class SiteAdapter extends RecyclerView.Adapter<SiteViewHolder>{
                     intent.setClass(c,SitePage.class);
                     intent.putExtra("url", sites.get(position).getUrl());
                     c.startActivity(intent);
-
-
                 }
             }
         });

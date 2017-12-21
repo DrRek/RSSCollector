@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,7 +72,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedViewHolder>{
     public void onBindViewHolder(FeedViewHolder holder, int position) {
         holder.txtTitle.setText(rssObject.getItems().get(position).getTitle());
         holder.txtPubDate.setText(rssObject.getItems().get(position).getPubDate());
-        holder.txtContent.setText(rssObject.getItems().get(position).getContent());
+        holder.txtContent.setText(rssObject.getItems().get(position).getDescription());
 
         holder.setItemClickListener(new ItemClickListener() {
             @Override
@@ -85,7 +86,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedViewHolder>{
                     intent.putExtra("content", rssObject.getItems().get(position).getContent());
                     intent.putExtra("date", rssObject.getItems().get(position).getPubDate());
                     intent.putExtra("title", rssObject.getItems().get(position).getTitle());
-                    //Intent browserIntent= new Intent(Intent.ACTION_VIEW, Uri.parse(rssObject.getItems().get(position).getLink()));
+                    //Intent browserIntent= new Intent(Intent.ACTION_VIEW, Uritext v.parse(rssObject.getItems().get(position).getLink()));
                    //  mContext.startActivity(browserIntent);
                     c.startActivity(intent);
 
