@@ -1,6 +1,8 @@
 package com.example.alberto.rssreader.Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -19,6 +21,7 @@ import com.example.alberto.rssreader.Model.RSSObject;
 import com.example.alberto.rssreader.Model.Site;
 import com.example.alberto.rssreader.R;
 import com.example.alberto.rssreader.SitePage;
+import com.example.alberto.rssreader.SitesList;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -94,27 +97,42 @@ public class SiteAdapter extends RecyclerView.Adapter<SiteViewHolder>{
 
         holder.setItemClickListener(new ItemClickListener() {
             @Override
-            public void onClick(View view, int position, boolean isLongClick) {
+            public void onClick(View view, final int position, boolean isLongClick) {
                 if(!isLongClick)
                 {
                     if(view.getId()== R.id.delete){
-                        SharedPreferences preferenze = mContext.getSharedPreferences("com.example.alberto.rssreader", MODE_PRIVATE);
-                        Gson gson = new Gson();
-                        String json = preferenze.getString("sitiScelti", "");
-                        List<Site> sites;
-                        if(!json.equals("")) {
-                            Type listType = new TypeToken<List<Site>>() {}.getType();
-                            sites = gson.fromJson(json, listType);
-                            sites.remove(sites.get(position));
-                            SharedPreferences.Editor editor = preferenze.edit();
-                            System.out.println("Numero di siti aggiunti: " + sites.size());
-                            String result = gson.toJson(sites);
-                            editor.putString("sitiScelti", result);
-                            editor.apply();
-                            dl.onDelete();
-                        }
 
-                        Toast.makeText(mContext, "Feed rimosso", Toast.LENGTH_SHORT).show();
+
+                            DialogInterface.OnClickListener l = new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    switch (i){
+                                        case DialogInterface.BUTTON_POSITIVE:
+                                            SharedPreferences preferenze = mContext.getSharedPreferences("com.example.alberto.rssreader", MODE_PRIVATE);
+                                            Gson gson = new Gson();
+                                            String json = preferenze.getString("sitiScelti", "");
+                                            List<Site> sites;
+                                            if(!json.equals("")) {
+                                                Type listType = new TypeToken<List<Site>>() {}.getType();
+                                                sites = gson.fromJson(json, listType);
+                                                sites.remove(sites.get(position));
+                                                SharedPreferences.Editor editor = preferenze.edit();
+                                                System.out.println("Numero di siti aggiunti: " + sites.size());
+                                                String result = gson.toJson(sites);
+                                                editor.putString("sitiScelti", result);
+                                                editor.apply();
+                                                dl.onDelete();
+                                            }
+                                            Toast.makeText(mContext, "Feed rimosso", Toast.LENGTH_SHORT).show();
+                                            break;
+                                        case DialogInterface.BUTTON_NEGATIVE:
+                                            Toast.makeText(mContext.getApplicationContext(), "Azione annullata", Toast.LENGTH_LONG).show();
+                                            break;
+                                    }
+                                }
+                            };
+                            AlertDialog.Builder b = new AlertDialog.Builder(mContext);
+                            b.setMessage("Sei sicuro di voler rimuovere questo feed RSS?").setNegativeButton("No",l).setPositiveButton("Sì",l).show();
                     }
                     else {
                         Intent intent = new Intent();

@@ -71,7 +71,7 @@ public class SitesList extends AppCompatActivity implements DeleteListener{
     }
 
     private void loadSites(){
-        SiteAdapter adapter = new SiteAdapter(sites, this,getBaseContext());
+        SiteAdapter adapter = new SiteAdapter(sites, this,this);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
@@ -84,6 +84,7 @@ public class SitesList extends AppCompatActivity implements DeleteListener{
 
     @Override
     public void onDelete() {
+
         onResume();
     }
 }
