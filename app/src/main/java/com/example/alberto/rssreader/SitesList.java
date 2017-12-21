@@ -42,7 +42,6 @@ public class SitesList extends AppCompatActivity implements DeleteListener{
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar3);
         toolbar.setTitle("RSS Collector");
         toolbar.setTitleTextColor(Color.WHITE);
-        toolbar.setTitleMarginStart(175);
         setSupportActionBar(toolbar);
 
     }
